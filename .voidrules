@@ -1,0 +1,559 @@
+# =====================================================
+# VIBE CODER'S ULTIMATE .voidrules TEMPLATE
+# Based on 700+ hrs of Cursor expertise by David Ondrej  
+# Optimized for VOID IDE hardcore development
+# =====================================================
+
+# PROJECT CONTEXT & CODEBASE OVERVIEW
+# ====================================
+
+## Project File Tree Structure
+```
+project-root/
+├── src/
+│   ├── components/          # Reusable UI components
+│   ├── pages/              # Application pages/routes  
+│   ├── utils/              # Helper functions
+│   ├── hooks/              # Custom React hooks
+│   ├── types/              # TypeScript type definitions
+│   ├── constants/          # Application constants
+│   ├── services/           # API services and data fetching
+│   ├── stores/             # State management (Zustand/Redux)
+│   └── styles/             # CSS/styling files
+├── tests/                  # Test files
+├── docs/                   # Documentation
+├── scripts/                # Build/deployment scripts
+├── public/                 # Static assets
+├── .voidrules             # This file
+├── package.json
+├── tsconfig.json
+├── tailwind.config.js
+└── README.md
+```
+
+## Tech Stack & Dependencies
+- Frontend: React 18+ with TypeScript
+- State Management: Zustand/Redux Toolkit  
+- Styling: Tailwind CSS + CSS Modules
+- Build Tool: Vite/Next.js 14+
+- Testing: Jest + React Testing Library + Playwright
+- API: REST/GraphQL with TanStack Query
+- Database: PostgreSQL/MongoDB with Prisma/Mongoose
+- Deployment: Vercel/Netlify/Docker
+- Linting: ESLint + Prettier + TypeScript ESLint
+
+# CORE DEVELOPMENT PRINCIPLES
+# ===========================
+
+## Code Quality Standards
+- Write self-documenting code with clear intent
+- Follow DRY (Don't Repeat Yourself) and SOLID principles
+- Prioritize readability and maintainability over cleverness
+- Use TypeScript for ALL code - no `any` types allowed
+- Implement comprehensive error handling and loading states
+- Write tests for critical business logic and edge cases
+- Use meaningful, descriptive variable and function names
+- Follow consistent naming conventions across the codebase
+
+## Performance First Mindset
+- Optimize for Core Web Vitals (LCP < 2.5s, FID < 100ms, CLS < 0.1)
+- Use React.memo(), useMemo(), and useCallback strategically
+- Implement code splitting and lazy loading for routes
+- Minimize bundle size and eliminate dead code ruthlessly
+- Use efficient data structures and algorithms
+- Profile performance regularly using React DevTools Profiler
+- Monitor real user metrics in production
+
+## Security Best Practices
+- NEVER commit secrets, API keys, or passwords to version control
+- Validate and sanitize ALL user inputs on client and server
+- Use parameterized queries to prevent SQL injection
+- Implement proper authentication and authorization
+- Follow OWASP Top 10 security guidelines religiously
+- Use HTTPS everywhere with secure headers
+- Regularly audit and update dependencies for security patches
+- Implement Content Security Policy (CSP) headers
+
+# AI ASSISTANT BEHAVIOR GUIDELINES
+# ================================
+
+## Response Style & Quality
+- Provide complete, production-ready code solutions
+- Include comprehensive error handling and edge cases
+- Add clear, concise comments for complex business logic
+- Suggest performance optimizations when relevant
+- Include TypeScript types for all interfaces and functions
+- Provide multiple implementation approaches when applicable
+- Always explain trade-offs, decisions, and potential gotchas
+- Consider accessibility and responsive design by default
+
+## Code Generation Rules
+- Use functional components with hooks exclusively (React)
+- Prefer composition over inheritance patterns
+- Implement proper separation of concerns
+- Use meaningful component and variable names that describe purpose
+- Include PropTypes or TypeScript interfaces for all components
+- Add loading, error, and empty states to all UI components
+- Follow established project patterns and architectural decisions
+- Write code that passes ESLint and TypeScript strict mode
+
+## Implementation Strategy
+- Start with the smallest possible working implementation
+- Build incrementally with functional iterations
+- Write tests before refactoring complex existing code
+- Document any breaking changes clearly with migration guides
+- Consider backwards compatibility for public APIs
+- Optimize for correctness first, then performance
+- Use progressive enhancement principles
+
+# FRAMEWORK-SPECIFIC GUIDELINES
+# ==============================
+
+## React Development Standards
+- Use functional components with hooks exclusively
+- Implement proper dependency arrays in useEffect hooks
+- Memoize expensive calculations with useMemo and useCallback
+- Use useCallback for function props passed to child components
+- Extract custom hooks for reusable stateful logic
+- Keep components focused and under 200 lines when possible
+- Use compound components pattern for complex UI hierarchies
+- Implement proper cleanup in useEffect to prevent memory leaks
+
+## TypeScript Excellence
+- Enable strict mode in tsconfig.json with all strict flags
+- Use `interface` for object shapes, `type` for unions/intersections
+- Prefer `readonly` arrays and object properties for immutability
+- Use const assertions for literal types and narrow inference
+- Implement proper generic constraints with meaningful names
+- Avoid `any` type - use `unknown` and type guards instead
+- Leverage utility types (Pick, Omit, Partial, Record) effectively
+- Create discriminated unions for complex state modeling
+
+## State Management Patterns
+- Keep global state minimal - prefer local component state
+- Use Zustand for simple global state with clear boundaries
+- Implement Redux Toolkit for complex state with time-travel debugging
+- Normalize nested data structures for efficient updates
+- Use TanStack Query for all server state management
+- Implement optimistic updates for better perceived performance
+- Cache computed values and avoid unnecessary recalculations
+- Use state machines for complex component state logic
+
+## Styling & Design System
+- Use Tailwind utility classes for consistent spacing and sizing
+- Create custom CSS components for complex, reusable patterns
+- Follow mobile-first responsive design approach
+- Use CSS custom properties (variables) for theming support
+- Implement comprehensive dark mode support from project start
+- Optimize for accessibility (WCAG 2.1 AA compliance minimum)
+- Use semantic HTML elements appropriately for screen readers
+- Create consistent design tokens for colors, spacing, typography
+
+# API & DATA HANDLING EXCELLENCE
+# ===============================
+
+## API Integration Patterns
+- Use TanStack Query for all server state management
+- Implement proper loading, error, and success states
+- Use optimistic updates for immediate user feedback
+- Cache responses intelligently to minimize network requests
+- Handle network failures gracefully with automatic retries
+- Implement pagination and virtual scrolling for large datasets
+- Use TypeScript interfaces for all API request/response types
+- Create typed API client functions with proper error handling
+
+## Error Handling Strategy
+- Create centralized error boundary components for React
+- Log errors with sufficient context for debugging and monitoring
+- Show user-friendly error messages with recovery actions
+- Implement fallback UI components for broken/failed states
+- Use proper HTTP status codes and error responses
+- Handle async operations with comprehensive try/catch blocks
+- Provide meaningful recovery options and retry mechanisms
+- Track error rates and patterns in production monitoring
+
+## Data Validation & Security
+- Validate all inputs on both client and server sides
+- Use schema validation libraries (Zod, Yup) for type safety
+- Sanitize user inputs to prevent XSS and injection attacks
+- Implement rate limiting for all API endpoints
+- Use TypeScript for compile-time type checking and validation
+- Validate environment variables at application startup
+- Handle edge cases and malformed data gracefully
+- Implement proper CORS policies for API access
+
+# TESTING STRATEGY & QUALITY ASSURANCE
+# =====================================
+
+## Testing Pyramid Implementation
+- Unit tests: Test individual functions, hooks, and utilities
+- Integration tests: Test component interactions and data flow
+- E2E tests: Test critical user workflows and business logic
+- Visual regression tests: Ensure UI consistency across changes
+- Performance tests: Monitor bundle size, load times, and metrics
+- Accessibility tests: Verify WCAG compliance and screen reader support
+- Security tests: Check for vulnerabilities and attack vectors
+- Load tests: Verify performance under expected traffic
+
+## Testing Best Practices
+- Write tests that describe behavior, not implementation details
+- Use descriptive test names that explain the specific scenario
+- Keep tests isolated, independent, and deterministic
+- Mock external dependencies and API calls consistently
+- Test error conditions, edge cases, and boundary values
+- Use factories and fixtures for consistent test data generation
+- Maintain high test coverage for critical business logic paths
+- Use snapshot testing judiciously for UI component regression
+
+# FILE ORGANIZATION & ARCHITECTURE
+# =================================
+
+## Component Architecture
+```
+ComponentName/
+├── index.ts                 # Export barrel file
+├── ComponentName.tsx        # Main component implementation
+├── ComponentName.test.tsx   # Unit and integration tests
+├── ComponentName.stories.tsx # Storybook component stories
+├── ComponentName.module.css # Scoped component styles
+├── hooks/                   # Component-specific custom hooks
+├── types.ts                 # Component-specific TypeScript types
+├── utils.ts                 # Component helper functions
+├── constants.ts             # Component-specific constants
+└── __fixtures__/            # Test fixtures and mock data
+```
+
+## Import Organization Standards
+```typescript
+// 1. React and core libraries
+import React, { useState, useEffect, useMemo } from 'react';
+import { NextPage, GetServerSideProps } from 'next';
+
+// 2. Third-party libraries (alphabetical)
+import { motion, AnimatePresence } from 'framer-motion';
+import { useQuery, useMutation } from '@tanstack/react-query';
+import { z } from 'zod';
+
+// 3. Internal utilities and hooks (alphabetical)
+import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { cn, formatDate } from '@/utils';
+
+// 4. Internal components (alphabetical)
+import { Button } from '@/components/Button';
+import { Modal } from '@/components/Modal';
+import { Spinner } from '@/components/Spinner';
+
+// 5. Type imports (always with 'type' qualifier)
+import type { User, ApiResponse } from '@/types';
+import type { ComponentProps } from 'react';
+```
+
+# GIT WORKFLOW & VERSION CONTROL
+# ===============================
+
+## Commit Message Convention
+```
+type(scope): brief description in imperative mood
+
+Optional longer description explaining what and why, not how.
+Can include multiple paragraphs if needed.
+
+- List specific changes or additions
+- Note any breaking changes
+- Reference related issue numbers (#123)
+
+Types: feat, fix, docs, style, refactor, test, chore, perf, ci
+Scope: component, api, config, deps, etc.
+```
+
+## Branch Strategy & Workflow
+- `main`: Production-ready code, always deployable
+- `develop`: Integration branch for features, staging environment
+- `feature/TICKET-123-brief-description`: New features and enhancements
+- `fix/TICKET-456-bug-description`: Bug fixes and patches
+- `hotfix/critical-security-patch`: Critical production fixes
+- `release/v1.2.0`: Preparation for production releases
+- `experiment/new-architecture`: Experimental features and research
+
+## Code Review Standards
+- Review for logic correctness and potential edge cases
+- Check for security vulnerabilities and data exposure
+- Verify performance implications and memory usage
+- Ensure code follows established project conventions
+- Test changes locally in multiple environments before approval
+- Provide constructive feedback with specific examples
+- Verify accessibility compliance and responsive behavior
+- Only approve when confident in code quality and safety
+
+# PERFORMANCE OPTIMIZATION MASTERY
+# =================================
+
+## Bundle & Build Optimization
+- Use dynamic imports and React.lazy for code splitting
+- Implement tree shaking to eliminate unused code
+- Optimize images with next/image or similar modern solutions
+- Use webpack-bundle-analyzer to identify and eliminate bloat
+- Implement service workers for intelligent caching strategies
+- Minimize and compress CSS and JavaScript bundles
+- Use CDN for static assets with proper cache headers
+- Implement resource hints (preload, prefetch, preconnect)
+
+## Runtime Performance Excellence
+- Avoid inline object and function creation in JSX render paths
+- Use React DevTools Profiler to identify and fix bottlenecks
+- Implement virtual scrolling for large lists and tables
+- Debounce expensive operations (search, API calls, analytics)
+- Use requestAnimationFrame for smooth animations
+- Optimize database queries and API response payloads
+- Monitor Core Web Vitals continuously in production
+- Implement progressive loading and skeleton screens
+
+## Memory Management
+- Clean up subscriptions and event listeners in useEffect
+- Avoid memory leaks from closures and retained references
+- Use weak references for cache implementations
+- Implement proper cleanup in component unmount
+- Monitor memory usage patterns in development
+- Use Chrome DevTools Memory tab for leak detection
+- Implement lazy loading for heavy components and features
+
+# SECURITY PROTOCOLS & COMPLIANCE
+# ================================
+
+## Authentication & Authorization
+- Use secure session management with proper expiration
+- Implement secure JWT handling with refresh token rotation
+- Store sensitive data in secure HTTP-only cookies only
+- Use OAuth 2.0 / OpenID Connect for third-party authentication
+- Implement multi-factor authentication for sensitive operations
+- Use role-based access control (RBAC) with principle of least privilege
+- Regularly rotate API keys, secrets, and certificates
+- Implement proper session timeout and concurrent session limits
+
+## Data Protection & Privacy
+- Encrypt sensitive data at rest and in transit (TLS 1.3+)
+- Use environment variables for all configuration secrets
+- Implement proper CORS policies with specific origins
+- Sanitize and validate all user inputs against XSS/injection
+- Use Content Security Policy (CSP) headers to prevent attacks
+- Implement rate limiting and DDoS protection mechanisms
+- Conduct regular security audits and penetration testing
+- Comply with GDPR, CCPA, and relevant privacy regulations
+
+## Secure Development Lifecycle
+- Use dependency scanning tools for vulnerability detection
+- Implement automated security testing in CI/CD pipeline
+- Use static analysis tools for code security review
+- Conduct regular third-party security assessments
+- Maintain security incident response procedures
+- Keep detailed security logs and audit trails
+- Implement secure coding training for all developers
+- Use secure defaults and fail-safe security measures
+
+# DEPLOYMENT & DEVOPS EXCELLENCE
+# ===============================
+
+## CI/CD Pipeline Standards
+- Automated testing on every commit and pull request
+- Code quality checks with ESLint, Prettier, and TypeScript
+- Security scans for dependencies and container images
+- Build optimization, minification, and compression
+- Automated deployment to staging and production environments
+- Database migration management with rollback capabilities
+- Environment-specific configuration and secret management
+- Blue-green or canary deployment strategies for zero downtime
+
+## Monitoring & Observability
+- Implement comprehensive application performance monitoring (APM)
+- Set up error tracking and alerting with contextual information
+- Monitor user behavior analytics and conversion funnels
+- Track business metrics, KPIs, and custom events
+- Set up infrastructure monitoring with health checks
+- Implement structured logging with correlation IDs
+- Use distributed tracing for microservices architectures
+- Regular backup testing and disaster recovery procedures
+
+## Infrastructure as Code
+- Use infrastructure as code tools (Terraform, CDK, etc.)
+- Implement container orchestration with Kubernetes or similar
+- Use configuration management for consistent environments
+- Implement auto-scaling based on metrics and demand
+- Use load balancers and CDN for global distribution
+- Implement proper DNS management and SSL certificates
+- Use secrets management tools for sensitive configuration
+- Implement cost optimization and resource monitoring
+
+# ACCESSIBILITY & INCLUSIVE DESIGN
+# =================================
+
+## WCAG 2.1 AA Compliance Standards
+- Use semantic HTML elements for proper document structure
+- Provide meaningful alt text for all informative images
+- Ensure keyboard navigation works for all interactive elements
+- Maintain minimum 4.5:1 color contrast ratios for normal text
+- Use ARIA labels, roles, and properties appropriately
+- Test regularly with screen readers (NVDA, JAWS, VoiceOver)
+- Provide visible focus indicators for all focusable elements
+- Ensure content is readable and functional at 200% zoom
+
+## Progressive Enhancement Philosophy
+- Ensure core functionality works without JavaScript enabled
+- Use responsive design principles for all screen sizes
+- Implement proper loading states and fallback content
+- Provide alternative content formats for rich media
+- Test functionality on low-bandwidth and slow connections
+- Support users with disabilities through assistive technologies
+- Implement offline functionality where appropriate
+- Use progressive web app (PWA) features for better UX
+
+## Inclusive User Experience
+- Design for users with cognitive and motor impairments
+- Provide multiple ways to complete important tasks
+- Use clear, simple language and avoid jargon
+- Implement consistent navigation and interaction patterns
+- Provide helpful error messages and recovery guidance
+- Allow users to control motion and animation preferences
+- Respect user preferences for reduced motion and dark mode
+- Test with diverse users and accessibility experts
+
+# DEBUGGING & TROUBLESHOOTING MASTERY
+# ====================================
+
+## Development Debugging Tools
+- Master React DevTools for component tree inspection
+- Use browser DevTools for performance analysis and debugging
+- Leverage Redux DevTools for state management debugging
+- Implement comprehensive logging in development environment
+- Use TypeScript strict mode for compile-time error prevention
+- Set up source maps for production debugging and error tracking
+- Use Storybook for isolated component development and testing
+- Implement debugging breakpoints and conditional logging
+
+## Production Issue Investigation
+- Reproduce issues in isolated development environments first
+- Check browser console for JavaScript errors and warnings
+- Verify network requests, responses, and API behavior
+- Test edge cases, error conditions, and boundary values
+- Use debugger statements and console.log strategically
+- Check cross-browser compatibility and responsive behavior
+- Review recent deployments and changes that might cause issues
+- Use error tracking tools for production issue monitoring
+
+## Performance Debugging Techniques
+- Use Chrome DevTools Performance tab for bottleneck identification
+- Analyze bundle size and loading patterns with webpack analyzer
+- Profile memory usage and detect memory leaks
+- Test on various devices and network conditions
+- Use Lighthouse for comprehensive performance auditing
+- Monitor real user metrics (RUM) in production
+- Implement custom performance marks and measures
+- Use APM tools for distributed system debugging
+
+# DOCUMENTATION & KNOWLEDGE SHARING
+# ==================================
+
+## Code Documentation Standards
+- Write clear JSDoc comments for all public functions and classes
+- Document API endpoints with OpenAPI/Swagger specifications
+- Maintain comprehensive and up-to-date README files
+- Create architectural decision records (ADRs) for major decisions
+- Document deployment procedures and environment setup
+- Keep detailed changelog with breaking changes and migrations
+- Provide code examples and usage patterns for complex features
+- Document coding standards and contribution guidelines
+
+## Team Knowledge Management
+- Conduct thorough code reviews with learning opportunities
+- Share learnings through regular tech talks and brown bags
+- Maintain living documentation that evolves with the codebase
+- Create comprehensive onboarding guides for new team members
+- Document common troubleshooting steps and solutions
+- Share useful tools, resources, and best practices
+- Hold regular architecture discussions and design reviews
+- Maintain a team knowledge base with searchable content
+
+## API & Integration Documentation
+- Document all public APIs with comprehensive examples
+- Provide SDK documentation and client libraries
+- Create integration guides for third-party services
+- Document authentication and authorization flows
+- Provide troubleshooting guides for common integration issues
+- Maintain versioning and deprecation policies
+- Create mock services for testing and development
+- Document rate limits, quotas, and service level agreements
+
+# FINAL IMPLEMENTATION INSTRUCTIONS
+# ==================================
+
+## Feature Development Workflow
+1. **Requirements Analysis**: Understand full context, user needs, and business requirements
+2. **Technical Planning**: Break down complex features into manageable, testable tasks
+3. **Design Review**: Consider UX, performance, security, and accessibility implications
+4. **Implementation**: Write clean, self-documenting code with comprehensive error handling
+5. **Testing**: Include unit, integration, and E2E tests for critical functionality
+6. **Security Review**: Consider security implications from authentication to data handling
+7. **Performance Check**: Use profiling tools to ensure optimal performance
+8. **Accessibility Audit**: Verify WCAG compliance and screen reader compatibility
+9. **Code Review**: Submit for peer review with clear description and test results
+10. **Documentation**: Update relevant documentation and add inline comments for complex logic
+
+## Code Quality Checklist
+- ✅ TypeScript types defined for all interfaces and functions
+- ✅ Comprehensive error handling for all async operations
+- ✅ Proper loading and error states for UI components
+- ✅ Accessibility considerations (WCAG 2.1 AA)
+- ✅ Responsive design tested on multiple screen sizes
+- ✅ Performance optimizations applied where needed
+- ✅ Security best practices followed throughout
+- ✅ Tests written for critical business logic
+- ✅ Code follows established patterns and conventions
+- ✅ Documentation updated for any public APIs or complex logic
+
+## Emergency Response Procedures
+- **Production Issues**: Follow incident response procedures with clear communication
+- **Security Incidents**: Immediately escalate and follow security incident protocol
+- **Performance Degradation**: Use monitoring tools to identify and resolve bottlenecks
+- **Data Issues**: Implement backup and recovery procedures with data integrity checks
+- **Deployment Failures**: Use rollback procedures and maintain system availability
+- **Third-party Outages**: Implement graceful degradation and fallback mechanisms
+
+Remember: Write code as if the person maintaining it is a brilliant developer who values clean, efficient, and secure solutions. Make it a pleasure to work with!
+
+# ADVANCED AI OPTIMIZATION TIPS
+# ==============================
+
+## Context Optimization for AI
+- Keep this .voidrules file under 500 lines for optimal AI processing
+- Use clear section headers for easy AI navigation
+- Provide specific examples rather than vague guidelines
+- Reference actual file paths and naming conventions
+- Include common error patterns and their solutions
+- Use consistent terminology throughout the project
+
+## Background Agent Delegation
+- Delegate repetitive tasks like testing, documentation, and refactoring
+- Use specific, actionable instructions for background agents
+- Break large features into parallel, independent tasks
+- Provide clear acceptance criteria for each delegated task
+- Include context about existing patterns and conventions
+
+## Multi-Model Strategy
+- Use this file as shared context across different AI models
+- Maintain consistency in coding standards across all AI interactions
+- Include framework-specific optimizations for better AI suggestions
+- Document decision rationales for AI to understand project evolution
+
+# PROJECT-SPECIFIC CUSTOMIZATION NOTES
+# ====================================
+
+# TODO: Customize these sections for your specific project:
+# - Update the file tree structure to match your actual project
+# - Modify the tech stack section with your specific dependencies
+# - Add any project-specific conventions or patterns
+# - Include domain-specific business logic guidelines
+# - Add any regulatory or compliance requirements
+# - Update API documentation standards for your specific APIs
+# - Include any custom deployment or infrastructure requirements
+
+# END OF VOIDRULES
+# =================
