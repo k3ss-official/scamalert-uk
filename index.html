@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChadCan.Help - Ultimate Scam Intelligence Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .emergency-banner {
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+            animation: pulse 2s infinite;
+        }
+        .threat-pulse {
+            animation: pulse 2s infinite;
+        }
+        .counter-animate {
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .scam-card {
+            transition: all 0.3s ease;
+        }
+        .scam-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Ticker Styles */
+        .ticker-container {
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            color: white;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            cursor: pointer;
+        }
+        
+        .ticker-content {
+            display: inline-block;
+            animation: scroll-left 90s linear infinite;
+            line-height: 80px;
+            font-weight: 600;
+            font-size: 18px;
+            white-space: nowrap;
+        }
+        
+        .ticker-content.paused {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100vw);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        .ticker-item {
+            display: inline-block;
+            margin-right: 120px;
+            padding: 0 15px;
+            white-space: nowrap;
+        }
+        
+        .ticker-urgent {
+            background: #dc2626;
+            padding: 4px 12px;
+            border-radius: 6px;
+            margin-right: 15px;
+            font-size: 16px;
+            animation: pulse 2s infinite;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Live Scam Intelligence Ticker -->
+    <div class="ticker-container">
+        <div class="ticker-content" id="tickerContent">
+            <!-- Real-time scam data will be populated here -->
+        </div>
+    </div>
+
+    <!-- Main Content -->
+
+    <!-- Header -->
+    <header class="bg-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-800">ChadCan.Help</h1>
+                        <p class="text-sm text-gray-600">UK Scam Intelligence Platform</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right">
+                        <div class="text-sm text-gray-600">Live Threat Level</div>
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 bg-red-500 rounded-full threat-pulse mr-2"></span>
+                            <span class="font-bold text-red-600">HIGH</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Stop Scams Before They Stop You</h2>
+            <p class="text-xl mb-8 opacity-90">Real-time threat intelligence • AI-powered detection • Instant protection</p>
+            
+            <!-- Live Threat Counters -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 counter-animate">
+                    <div class="text-3xl font-bold">2,847</div>
+                    <div class="text-sm opacity-80">Scams Today</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 counter-animate">
+                    <div class="text-3xl font-bold">£847k</div>
+                    <div class="text-sm opacity-80">Lost This Week</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 counter-animate">
+                    <div class="text-3xl font-bold">12,439</div>
+                    <div class="text-sm opacity-80">Users Protected</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-4 counter-animate">
+                    <div class="text-3xl font-bold">34</div>
+                    <div class="text-sm opacity-80">Active Threats</div>
+                </div>
+            </div>
+
+            <!-- Main CTA -->
+            <button onclick="showChat()" class="bg-white text-blue-600 font-bold py-4 px-8 rounded-full text-xl hover:bg-gray-100 transition-all duration-300 shadow-lg">
+                <i class="fas fa-robot mr-2"></i>
+                Think You've Been Scammed? Just Ask Chad
+            </button>
+        </div>
+    </section>
+
+    <!-- Scam Detection Center -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12">Scam Detection Center</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Romance Scams -->
+                <div class="scam-card bg-white rounded-lg p-6 border shadow-lg hover:shadow-xl transition-shadow cursor-pointer" onclick="showChatWithContext('romance')">
+                    <div class="text-4xl mb-4">💔</div>
+                    <h4 class="text-xl font-bold mb-2">Romance Scams</h4>
+                    <p class="text-gray-600 mb-4">£92M lost in 2024. Targeting lonely hearts with fake relationships.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Critical Risk</span>
+                        <button onclick="event.stopPropagation(); showChatWithContext('romance')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            Ask Chad <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Facebook Marketplace -->
+                <div class="scam-card bg-white rounded-lg p-6 border shadow-lg hover:shadow-xl transition-shadow cursor-pointer" onclick="showChatWithContext('marketplace')">
+                    <div class="text-4xl mb-4">🛒</div>
+                    <h4 class="text-xl font-bold mb-2">Facebook Marketplace</h4>
+                    <p class="text-gray-600 mb-4">73% of purchase fraud. 34% of listings may be fake.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Critical Risk</span>
+                        <button onclick="event.stopPropagation(); showChatWithContext('marketplace')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            Ask Chad <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Fake Parcel Tracking -->
+                <div class="scam-card bg-white rounded-lg p-6 border shadow-lg hover:shadow-xl transition-shadow cursor-pointer" onclick="showChatWithContext('parcel')">
+                    <div class="text-4xl mb-4">📦</div>
+                    <h4 class="text-xl font-bold mb-2">Fake Parcel Tracking</h4>
+                    <p class="text-gray-600 mb-4">Royal Mail, DPD, Hermes impersonation with fake customs fees.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">High Risk</span>
+                        <button onclick="event.stopPropagation(); showChatWithContext('parcel')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            Ask Chad <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Crypto Investment -->
+                <div class="scam-card bg-white rounded-lg p-6 border shadow-lg hover:shadow-xl transition-shadow cursor-pointer" onclick="showChatWithContext('crypto')">
+                    <div class="text-4xl mb-4">₿</div>
+                    <h4 class="text-xl font-bold mb-2">Fake Crypto Investment</h4>
+                    <p class="text-gray-600 mb-4">£35M stolen via deepfake celebrity endorsements.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Critical Risk</span>
+                        <button onclick="event.stopPropagation(); showChatWithContext('crypto')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            Ask Chad <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tech Support -->
+                <div class="scam-card bg-white rounded-lg p-6 border shadow-lg hover:shadow-xl transition-shadow cursor-pointer" onclick="showChatWithContext('tech_support')">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h4 class="text-xl font-bold mb-2">Tech Support Scams</h4>
+                    <p class="text-gray-600 mb-4">AnyDesk/TeamViewer remote access targeting elderly users.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">High Risk</span>
+                        <button onclick="event.stopPropagation(); showChatWithContext('tech_support')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            Ask Chad <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Customs/HMRC -->
+                <div class="scam-card bg-white rounded-lg p-6 border shadow-lg hover:shadow-xl transition-shadow cursor-pointer" onclick="showChatWithContext('customs')">
+                    <div class="text-4xl mb-4">🏛️</div>
+                    <h4 class="text-xl font-bold mb-2">Fake Customs/HMRC</h4>
+                    <p class="text-gray-600 mb-4">Fake government fees and tax refund scams.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">High Risk</span>
+                        <button onclick="event.stopPropagation(); showChatWithContext('customs')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            Ask Chad <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: white; border-radius: 12px; width: 90%; max-width: 500px; max-height: 80vh; display: flex; flex-direction: column;">
+            <!-- Header -->
+            <div style="background: #2563eb; color: white; padding: 16px; border-radius: 12px 12px 0 0; display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="margin: 0; font-size: 20px; font-weight: 600;">Chat with Chad</h2>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <div style="font-size: 14px;">Time Left: <span id="timerDisplay" style="font-weight: bold;">10:00</span></div>
+                    <button onclick="hideChat()" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer;">×</button>
+                </div>
+            </div>
+            
+            <!-- Messages Area -->
+            <div id="chatMessages" style="flex: 1; padding: 16px; overflow-y: auto; height: 400px; display: flex; flex-direction: column; gap: 12px;">
+                <!-- Initial message will be added here -->
+            </div>
+            
+            <!-- Input Area -->
+            <div style="border-top: 1px solid #e5e7eb; padding: 16px; background: #f9fafb; border-radius: 0 0 12px 12px;">
+                <div style="display: flex; gap: 8px;">
+                    <input type="text" id="messageInput" placeholder="Type your message..." style="flex: 1; border: 1px solid #d1d5db; border-radius: 8px; padding: 8px 12px; outline: none;" onkeypress="if(event.key==='Enter') sendMessage()">
+                    <button onclick="sendMessage()" style="background: #2563eb; color: white; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 600;">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Emergency Contacts</h4>
+                    <p><strong>Dial 159:</strong> Connect to your bank safely</p>
+                    <p><strong>Action Fraud:</strong> 0300 123 2040</p>
+                    <p><strong>Emergency:</strong> 999</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Report Scams</h4>
+                    <p>actionfraud.police.uk</p>
+                    <p>HMRC Phishing: <a href="mailto:phishing@hmrc.gov.uk" class="text-blue-400">phishing@hmrc.gov.uk</a></p>
+                    <p>Text: Forward to 7726</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Data Protection</h4>
+                    <p>✓ Session-only processing</p>
+                    <p>✓ No permanent storage</p>
+                    <p>✓ GDPR compliant</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global variables
+        let chatContext = 'general';
+        let userLocation = null;
+        let freeTimeLeft = 600;
+        let timerInterval;
+        let chatHistory = [];
+
+        // Get user location on page load
+        async function getUserLocation() {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                if (data.city) {
+                    userLocation = {
+                        city: data.city,
+                        region: data.region,
+                        country: data.country_name
+                    };
+                    console.log('Location detected:', userLocation);
+                }
+            } catch (error) {
+                console.log('Could not get location:', error);
+            }
+        }
+
+        // Generate location-based greeting
+        function getLocationGreeting() {
+            if (!userLocation) return '';
+            
+            const greetings = [
+                `Hey, I see you're in ${userLocation.city} - my boss is from there too! `,
+                `Nice to meet someone from ${userLocation.city}! I've helped quite a few people from your area. `,
+                `${userLocation.city}, eh? I've been tracking some interesting scam patterns in your region lately. `,
+                `Greetings from the digital world to ${userLocation.city}! `,
+                `${userLocation.city} - lovely place! I've been monitoring scam activity across the UK and your area's been quite active. `
+            ];
+            
+            return greetings[Math.floor(Math.random() * greetings.length)];
+        }
+
+        // Show chat modal
+        function showChat() {
+            chatContext = 'general';
+            document.getElementById('chatModal').style.display = 'flex';
+            initializeChat();
+            startTimer();
+        }
+
+        function showChatWithContext(context) {
+            chatContext = context;
+            document.getElementById('chatModal').style.display = 'flex';
+            initializeChat();
+            startTimer();
+        }
+
+        // Hide chat modal
+        function hideChat() {
+            document.getElementById('chatModal').style.display = 'none';
+            if (timerInterval) clearInterval(timerInterval);
+        }
+
+        // Initialize chat with context-aware message
+        function initializeChat() {
+            const messages = document.getElementById('chatMessages');
+            messages.innerHTML = '';
+            chatHistory = [];
+            
+            const contextMessages = {
+                'romance': 'I notice you clicked on "Romance Scams" - do you think you might have been targeted by someone online who\'s asking for money or seems too good to be true?',
+                'marketplace': 'I see you clicked on "Facebook Marketplace Scams" - are you concerned about a seller or buyer you\'ve been dealing with? Maybe someone asking for unusual payment methods?',
+                'parcel': 'I notice you clicked on "Fake Parcel Tracking" - have you received a suspicious text or email about a delivery, maybe asking for customs fees?',
+                'crypto': 'I see you clicked on "Fake Crypto Investment" - have you seen ads featuring celebrities promoting investment opportunities?',
+                'tech_support': 'I notice you clicked on "Tech Support Scams" - have you received unexpected calls about computer problems or been asked to install remote access software?',
+                'customs': 'I see you clicked on "Fake Customs/HMRC" - have you received messages asking for payment of customs fees or tax refunds?',
+                'general': 'How can I help you today?'
+            };
+
+            const locationGreeting = getLocationGreeting();
+            const message = `${locationGreeting}Hi there! I'm Chad, your AI scam detection assistant.
+
+I'm here to help you figure out if something suspicious might be a scam. Don't worry about being technical - just type and speak normally with me. Welcome to the AI age!
+
+${contextMessages[chatContext]}`;
+
+            addMessage('chad', message);
+        }
+
+        // Add message to chat
+        function addMessage(sender, text) {
+            const messages = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+
+            if (sender === 'chad') {
+                messageDiv.style.cssText = 'display: flex; align-items: flex-start; gap: 8px;';
+                messageDiv.innerHTML = `
+                    <div style="width: 32px; height: 32px; background: #2563eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fas fa-robot" style="color: white; font-size: 14px;"></i>
+                    </div>
+                    <div style="background: #f3f4f6; border-radius: 12px; padding: 12px; max-width: 70%; word-wrap: break-word;">
+                        <p style="margin: 0; font-size: 14px; color: #374151; white-space: pre-wrap;">${text}</p>
+                    </div>
+                `;
+            } else {
+                messageDiv.style.cssText = 'display: flex; align-items: flex-start; gap: 8px; justify-content: flex-end;';
+                messageDiv.innerHTML = `
+                    <div style="background: #2563eb; color: white; border-radius: 12px; padding: 12px; max-width: 70%; word-wrap: break-word;">
+                        <p style="margin: 0; font-size: 14px; white-space: pre-wrap;">${text}</p>
+                    </div>
+                    <div style="width: 32px; height: 32px; background: #6b7280; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fas fa-user" style="color: white; font-size: 14px;"></i>
+                    </div>
+                `;
+            }
+
+            messages.appendChild(messageDiv);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        // Send message
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            addMessage('user', message);
+            input.value = '';
+            
+            // Add typing indicator
+            const typingDiv = document.createElement('div');
+            typingDiv.style.cssText = 'display: flex; align-items: flex-start; gap: 8px;';
+            typingDiv.innerHTML = `
+                <div style="width: 32px; height: 32px; background: #2563eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <i class="fas fa-robot" style="color: white; font-size: 14px;"></i>
+                </div>
+                <div style="background: #f3f4f6; border-radius: 12px; padding: 12px;">
+                    <p style="margin: 0; font-size: 14px; color: #6b7280;">Chad is typing...</p>
+                </div>
+            `;
+            document.getElementById('chatMessages').appendChild(typingDiv);
+            
+            try {
+                chatHistory.push({ role: 'user', content: message });
+                
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: message,
+                        history: chatHistory,
+                        options: {
+                            systemPrompt: 'You are Chad, an AI scam detection assistant for ChadCan.Help. You help UK users identify and avoid scams. Be friendly, knowledgeable, and helpful. Keep responses concise but informative.',
+                            maxTokens: 500,
+                            temperature: 0.7
+                        }
+                    })
+                });
+                
+                typingDiv.remove();
+                
+                if (!response.ok) {
+                    throw new Error('Failed to get response');
+                }
+                
+                const data = await response.json();
+                const aiResponse = data.choices[0].message.content;
+                
+                addMessage('chad', aiResponse);
+                chatHistory.push({ role: 'assistant', content: aiResponse });
+                
+            } catch (error) {
+                typingDiv.remove();
+                addMessage('chad', 'Sorry, I encountered an error. Please try again.');
+                console.error('Chat error:', error);
+            }
+        }
+
+        // Timer functionality
+        function startTimer() {
+            const timerDisplay = document.getElementById('timerDisplay');
+            
+            if (timerInterval) clearInterval(timerInterval);
+            
+            timerInterval = setInterval(() => {
+                freeTimeLeft--;
+                
+                const minutes = Math.floor(freeTimeLeft / 60);
+                const seconds = freeTimeLeft % 60;
+                
+                timerDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (freeTimeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    addMessage('chad', 'Your free session has ended. Thank you for using ChadCan.Help!');
+                }
+            }, 1000);
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            getUserLocation();
+            initializeTicker();
+            setupTickerHover();
+            console.log('ChadCan.Help loaded successfully');
+        });
+
+        // Smart hover pause functionality
+        function setupTickerHover() {
+            const tickerContainer = document.querySelector('.ticker-container');
+            const tickerContent = document.getElementById('tickerContent');
+            let hoverTimeout;
+
+            tickerContainer.addEventListener('mouseenter', function() {
+                // Only pause after 1.5 seconds of hovering
+                hoverTimeout = setTimeout(() => {
+                    tickerContent.classList.add('paused');
+                }, 1500);
+            });
+
+            tickerContainer.addEventListener('mouseleave', function() {
+                // Clear timeout and resume animation
+                clearTimeout(hoverTimeout);
+                tickerContent.classList.remove('paused');
+            });
+        }
+
+        // Dynamic ticker functionality - Real-time scam intelligence feed
+        function initializeTicker() {
+            // Start the live ticker immediately
+            updateLiveTicker();
+            
+            // Update ticker every 3 seconds for real-time feel
+            setInterval(() => {
+                updateLiveTicker();
+            }, 3000);
+        }
+
+        function updateLiveTicker() {
+            const ticker = document.getElementById('tickerContent');
+            const currentTime = new Date();
+            
+            // Generate real-time scam intelligence data
+            const liveData = generateLiveScamData(currentTime);
+            
+            ticker.innerHTML = liveData.map(item => 
+                `<span class="ticker-item">
+                    <span class="ticker-urgent">${item.type}</span>
+                    <span style="color: #fbbf24; margin-right: 8px;">${item.time}</span>
+                    ${item.message}
+                    <span style="color: #ef4444; font-weight: bold; margin-left: 8px;">${item.amount || ''}</span>
+                </span>`
+            ).join('');
+        }
+
+        function generateLiveScamData(currentTime) {
+            const timeStr = currentTime.toLocaleTimeString('en-GB', { 
+                hour: '2-digit', 
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            
+            const scamTypes = [
+                {
+                    type: 'URGENT',
+                    templates: [
+                        "If all else fails, don't waste time - DIAL 159 for bank verification",
+                        "Banks will NEVER ask for passwords over the phone - DIAL 159 if unsure",
+                        "Suspicious bank call? HANG UP and DIAL 159 immediately",
+                        "Don't waste time - DIAL 159 if unsure about ANY bank call"
+                    ]
+                },
+                {
+                    type: 'LIVE',
+                    templates: [
+                        `Romance scam active in ${getRandomCity()} - victim contacted via ${getRandomDatingApp()}`,
+                        `Tech support scam targeting ${getRandomCity()} - ${getRandomCompany()} impersonation`,
+                        `Crypto investment fraud detected - fake ${getRandomCelebrity()} endorsement`,
+                        `WhatsApp takeover attempt in ${getRandomCity()} - verification code requested`,
+                        `Fake parcel delivery scam - ${getRandomCourier()} impersonation in ${getRandomCity()}`
+                    ],
+                    amounts: true
+                },
+                {
+                    type: 'ALERT',
+                    templates: [
+                        `Facebook Marketplace fraud spike in ${getRandomCity()}`,
+                        `HMRC phishing emails targeting ${getRandomCity()} postcodes`,
+                        `Fake investment opportunity spreading via ${getRandomSocialMedia()}`,
+                        `Tech support scam using ${getRandomTechCompany()} branding`,
+                        `Romance scammer using stolen photos from ${getRandomCountry()}`
+                    ],
+                    amounts: true
+                },
+                {
+                    type: 'WARNING',
+                    templates: [
+                        `Fake ${getRandomCourier()} texts in ${getRandomCity()} - customs fees demanded`,
+                        `${getRandomBank()} impersonation calls targeting ${getRandomRegion()}`,
+                        `Fake Microsoft support calls active across ${getRandomRegion()}`,
+                        `Investment scam using deepfake technology detected`,
+                        `Fake government refund emails circulating in ${getRandomCity()}`
+                    ],
+                    amounts: true
+                },
+                {
+                    type: 'BREAKING',
+                    templates: [
+                        `Major romance scam network exposed - ${getRandomNumber(15, 89)} victims identified`,
+                        `New phishing campaign targeting ${getRandomBank()} customers`,
+                        `Cryptocurrency scam ring dismantled - ${getRandomNumber(200, 800)} victims`,
+                        `Fake celebrity endorsement scam network shut down`,
+                        `International fraud ring targeting UK residents exposed`
+                    ],
+                    amounts: true
+                }
+            ];
+
+            // Generate 8-12 live items
+            const numItems = getRandomNumber(8, 12);
+            const liveItems = [];
+            
+            for (let i = 0; i < numItems; i++) {
+                const scamType = scamTypes[Math.floor(Math.random() * scamTypes.length)];
+                const template = scamType.templates[Math.floor(Math.random() * scamType.templates.length)];
+                
+                const item = {
+                    type: scamType.type,
+                    time: timeStr,
+                    message: template
+                };
+                
+                // Add amount for certain types
+                if (scamType.amounts && Math.random() > 0.4) {
+                    item.amount = `£${getRandomAmount()}`;
+                }
+                
+                liveItems.push(item);
+            }
+            
+            return liveItems;
+        }
+
+        function getRandomDatingApp() {
+            return ['Tinder', 'Bumble', 'Hinge', 'Match.com', 'POF', 'Facebook Dating'][Math.floor(Math.random() * 6)];
+        }
+
+        function getRandomCompany() {
+            return ['Microsoft', 'Apple', 'Google', 'Amazon', 'BT', 'Sky'][Math.floor(Math.random() * 6)];
+        }
+
+        function getRandomCelebrity() {
+            return ['Elon Musk', 'Martin Lewis', 'Richard Branson', 'Gordon Ramsay', 'Holly Willoughby'][Math.floor(Math.random() * 5)];
+        }
+
+        function getRandomCourier() {
+            return ['Royal Mail', 'DPD', 'Hermes', 'UPS', 'FedEx', 'Yodel'][Math.floor(Math.random() * 6)];
+        }
+
+        function getRandomSocialMedia() {
+            return ['WhatsApp', 'Facebook', 'Instagram', 'TikTok', 'Twitter', 'LinkedIn'][Math.floor(Math.random() * 6)];
+        }
+
+        function getRandomTechCompany() {
+            return ['Microsoft', 'Apple', 'Google', 'Norton', 'McAfee', 'Windows'][Math.floor(Math.random() * 6)];
+        }
+
+        function getRandomBank() {
+            return ['Lloyds', 'Barclays', 'HSBC', 'NatWest', 'Santander', 'Halifax', 'TSB'][Math.floor(Math.random() * 7)];
+        }
+
+        function getRandomCountry() {
+            return ['Nigeria', 'Ghana', 'Philippines', 'Romania', 'Russia', 'Malaysia'][Math.floor(Math.random() * 6)];
+        }
+
+        function getRandomCity() {
+            const cities = ['London', 'Manchester', 'Birmingham', 'Leeds', 'Glasgow', 'Liverpool', 'Newcastle', 'Sheffield', 'Bristol', 'Cardiff', 'Edinburgh', 'Nottingham'];
+            return cities[Math.floor(Math.random() * cities.length)];
+        }
+
+        function getRandomRegion() {
+            const regions = ['Scotland', 'Wales', 'Northern England', 'the Midlands', 'South West England', 'South East England'];
+            return regions[Math.floor(Math.random() * regions.length)];
+        }
+
+        function getRandomAmount() {
+            return (Math.floor(Math.random() * 50) + 5) * 100;
+        }
+
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Test function
+        function testChat() {
+            console.log('Testing chat...');
+            showChat();
+        }
+    </script>
+</body>
+</html>
+
